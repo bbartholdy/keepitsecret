@@ -52,9 +52,9 @@ lotr_sentences <- function(n = 4){
   sentence_tbl <- get_sentences()
   sen <- sentence_tbl |>
     dplyr::filter(wc >= n) |>
-    dplyr::slice_sample(n = 1) |>
-    _$sen #|>
-  return(sen)
+    dplyr::slice_sample(n = 1)
+  out <- sen$sen
+  return(out)
 }
 
 # convert raw string of hashes to data frame with one row per response
