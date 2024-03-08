@@ -72,7 +72,7 @@ hash_to_tbl <- function(x){
 zxcvbn <- function(pw){
   ct <- V8::v8()
   #ct$source("https://raw.githubusercontent.com/dropbox/zxcvbn/master/dist/zxcvbn.js")
-  ct$source("inst/js/zxcvbn.js")
+  ct$source("js/zxcvbn.js")
   output <- ct$call("zxcvbn", pw)
   return(output)
 }
