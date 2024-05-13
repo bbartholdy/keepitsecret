@@ -29,7 +29,7 @@ To generate a password.
 library(keepitsecret)
 pw <- keepitsafe()
 pw
-#> [1] "Forgoil dotted Haven’t Nasty"
+#> [1] "refreshed notion puffing network"
 ```
 
 You can also test whether a password has been part of a data breach (is
@@ -37,6 +37,7 @@ it secret?)
 
 ``` r
 is_it_secret(pw)
+#> This password was not found in the Pwned passwords database
 #> ✔ All right, cousin Frodo! You can keep your secret for the present, if you want to be mysterious.
 ```
 

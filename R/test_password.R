@@ -38,6 +38,8 @@ is_it_secret <- function(pw){
   if(nrow(matches) > 0){
     cli::cli_alert_warning(sprintf("Password found in database %s times", matches$n))
   } else {
+    cli::cli_text("This password was not found in the Pwned passwords database")
+    cat("\n")
     cli::cli_alert_success("All right, cousin Frodo! You can keep your secret for the present, if you want to be mysterious.")
   }
 }
