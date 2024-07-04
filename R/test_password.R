@@ -25,7 +25,7 @@
 #' is_it_safe(pw) # definitely not...
 #' }
 #' @export
-is_it_secret <- function(pw){
+is_it_secret <- function(pw, verbose = T){
   pw_sha1 <- openssl::sha1(pw)
   hash_prefix <- stringr::str_to_upper(stringr::str_extract(pw_sha1, "^\\w{5}"))
   hash_suffix <- stringr::str_to_upper(stringr::str_remove(pw_sha1, "\\w{5}"))
@@ -34,14 +34,18 @@ is_it_secret <- function(pw){
   resp <- httr2::req_perform(req)
   resp_string <- httr2::resp_body_string(resp)
   resp_tbl <- hash_to_tbl(resp_string)
-  matches <- dplyr::filter(resp_tbl, hash == hash_suffix)
-  if(nrow(matches) > 0){
-    cli::cli_alert_warning(sprintf("Password found in database %s times", matches$n))
-  } else {
-    cli::cli_text("This password was not found in the Pwned passwords database")
-    cat("\n")
-    cli::cli_alert_success("All right, cousin Frodo! You can keep your secret for the present, if you want to be mysterious.")
+  matches <- dplyr::filter(resp_tbl, hash == hash_suffix)$n
+  if(length(matches) == 0) matches <- 0
+  if(verbose == TRUE){
+    if(matches > 0){
+      cli::cli_alert_warning(sprintf("Password found in database %s times", matches))
+    } else {
+      cli::cli_text("This password was not found in the Pwned passwords database")
+      cat("\n")
+      cli::cli_alert_success("All right, cousin Frodo! You can keep your secret for the present, if you want to be mysterious.")
+    }
   }
+  return(invisible(matches))
 }
 
 #' @param verbose logical. Whether or not to print output of strength estimator.

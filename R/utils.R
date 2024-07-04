@@ -71,12 +71,12 @@ hash_to_tbl <- function(x){
 
 zxcvbn <- function(pw){
   ct <- V8::v8()
-  #ct$source("https://raw.githubusercontent.com/dropbox/zxcvbn/master/dist/zxcvbn.js")
   ct$source(js_file_path("zxcvbn.js"))
   output <- ct$call("zxcvbn", pw)
   return(output)
 }
 
+# pathfinder
 js_file_path <- function(path = NULL) {
   if (is.null(path)) {
     dir(system.file("js", package = "keepitsecret"))

@@ -6,9 +6,9 @@
 #' @return Returns a string with the generated password.
 #' @examples
 #' # generate a password using a random method
-#' keepitsecret::keepitsafe("random")
+#' keep_it_safe("random")
 #' @export
-keepitsafe <- function(method = c("word", "phrase", "sentence", "random"), ...){
+keep_it_safe <- function(method = c("word", "phrase", "sentence", "random"), ...){
   method_vec <- pw_methods()
   m <- match.arg(method, choices = c("word", "phrase", "sentence", "random"))
   func <- switch(
@@ -31,7 +31,7 @@ keepitsafe <- function(method = c("word", "phrase", "sentence", "random"), ...){
 #' no capitalisation, and capitalise each word.
 #' @param ... pass arguments to \code{\link{lotr_words}}
 #' @rdname pw-methods
-random_words <- function(n = 4, cap = c("original", "none", "title"), sep = " ", ...){
+random_words <- function(n = 4, cap = c("original", "none", "title"), sep = "-", ...){
   cap <- match.arg(cap, c("original", "none", "title"))
   words <- lotr_words(...)
   words_vector <- dplyr::slice_sample(words, n = n)$word
