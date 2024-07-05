@@ -24,6 +24,9 @@ knitr::opts_chunk$set(
 This package will help you generate a strong password. Even better, the password
 will contain words straight out of the Lord of the Rings novel!
 
+It was heavily inspired by [this xkcd comic](https://xkcd.com/936/) and
+[this Phoenix Nap blog post](https://phoenixnap.com/blog/strong-great-password-ideas).
+
 ## Installation
 
 You can install the development version of keepitsecret like so:
@@ -38,7 +41,7 @@ To generate a password.
 
 ```{r generate}
 library(keepitsecret)
-pw <- keepitsafe()
+pw <- keep_it_safe()
 pw
 ```
 

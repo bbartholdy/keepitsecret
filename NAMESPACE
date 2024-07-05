@@ -2,5 +2,5 @@
 
 export(is_it_safe)
 export(is_it_secret)
-export(keepitsafe)
+export(keep_it_safe)
 importFrom(utils,globalVariables)

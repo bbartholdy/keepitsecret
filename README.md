@@ -13,6 +13,10 @@
 This package will help you generate a strong password. Even better, the
 password will contain words straight out of the Lord of the Rings novel!
 
+It was heavily inspired by [this xkcd comic](https://xkcd.com/936/) and
+[this Phoenix Nap blog
+post](https://phoenixnap.com/blog/strong-great-password-ideas).
+
 ## Installation
 
 You can install the development version of keepitsecret like so:
@@ -27,9 +31,9 @@ To generate a password.
 
 ``` r
 library(keepitsecret)
-pw <- keepitsafe()
+pw <- keep_it_safe()
 pw
-#> [1] "refreshed notion puffing network"
+#> [1] "Folco-Imladris-objection-bread"
 ```
 
 You can also test whether a password has been part of a data breach (is
@@ -53,7 +57,7 @@ Beware of common
 
 ``` r
 is_it_secret("password1234")
-#> ! Password found in database 48483 times
+#> ! Password found in database 48725 times
 ```
 
 and weak passwords!
