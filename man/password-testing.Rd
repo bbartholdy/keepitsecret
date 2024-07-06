@@ -5,7 +5,7 @@
 \alias{is_it_safe}
 \title{Is the password secret? Is the password safe?}
 \usage{
-is_it_secret(pw)
+is_it_secret(pw, verbose = T)
 
 is_it_safe(pw, verbose = T)
 }

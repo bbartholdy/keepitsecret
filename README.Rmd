@@ -27,6 +27,8 @@ will contain words straight out of the Lord of the Rings novel!
 It was heavily inspired by [this xkcd comic](https://xkcd.com/936/) and
 [this Phoenix Nap blog post](https://phoenixnap.com/blog/strong-great-password-ideas).
 
+A Shiny app is available here: https://websaur.shinyapps.io/keepitsecret/
+
 ## Installation
 
 You can install the development version of keepitsecret like so:
@@ -71,3 +73,11 @@ is_it_safe("password1234")
 
 ![yes, yes, this part is only in the movie...](https://i.imgflip.com/8gwn0y.jpg)
 
+## Shiny app
+
+You can also use the Shiny app instead of the console.
+
+```{r shiny}
+#| eval: false
+runRing() # to rule them all
+```

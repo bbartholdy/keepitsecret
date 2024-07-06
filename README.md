@@ -17,6 +17,9 @@ It was heavily inspired by [this xkcd comic](https://xkcd.com/936/) and
 [this Phoenix Nap blog
 post](https://phoenixnap.com/blog/strong-great-password-ideas).
 
+A Shiny app is available here:
+<https://websaur.shinyapps.io/keepitsecret/>
+
 ## Installation
 
 You can install the development version of keepitsecret like so:
@@ -33,7 +36,7 @@ To generate a password.
 library(keepitsecret)
 pw <- keep_it_safe()
 pw
-#> [1] "Folco-Imladris-objection-bread"
+#> [1] "saluting-death’s-uniquely-enormous"
 ```
 
 You can also test whether a password has been part of a data breach (is
@@ -78,3 +81,11 @@ alt="yes, yes, this part is only in the movie…" />
 <figcaption aria-hidden="true">yes, yes, this part is only in the
 movie…</figcaption>
 </figure>
+
+## Shiny app
+
+You can also use the Shiny app instead of the console.
+
+``` r
+runRing() # to rule them all
+```

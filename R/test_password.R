@@ -17,6 +17,7 @@
 #' online with no throttling;
 #' and, if the password is weak, prints warning and suggestions for improvement (if `verbose = TRUE`).
 #' @param pw string. Password to test against Pwned Passwords database.
+#' @param verbose logical. Should the output be printed in the console? Default is `TRUE`.
 #' @rdname password-testing
 #' @examples
 #' \dontrun{
@@ -26,6 +27,8 @@
 #' }
 #' @export
 is_it_secret <- function(pw, verbose = T){
+  # test internet connection
+  if(!curl::has_internet()) stop("You don't seem to be connected to the internet.")
   pw_sha1 <- openssl::sha1(pw)
   hash_prefix <- stringr::str_to_upper(stringr::str_extract(pw_sha1, "^\\w{5}"))
   hash_suffix <- stringr::str_to_upper(stringr::str_remove(pw_sha1, "\\w{5}"))
