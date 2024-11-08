@@ -14,9 +14,11 @@ Depends:
 LazyData: true
 Imports: 
     cli,
+    curl,
     dplyr,
     httr2,
     openssl,
+    shiny,
     stringr,
     tidytext,
     V8
