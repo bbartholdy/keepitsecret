@@ -6,7 +6,7 @@
 \alias{sentence_method}
 \title{Password generator}
 \usage{
-random_words(n = 4, cap = c("original", "none", "title"), sep = " ", ...)
+random_words(n = 4, cap = c("original", "none", "title"), sep = "-", ...)
 
 phrase_method(n = 6, sep = "")
 
