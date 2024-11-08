@@ -3,4 +3,5 @@
 export(is_it_safe)
 export(is_it_secret)
 export(keep_it_safe)
+export(runRing)
 importFrom(utils,globalVariables)

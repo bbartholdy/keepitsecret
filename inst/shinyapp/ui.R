@@ -16,11 +16,11 @@ ui <- page_sidebar(
       ),
       selected = "word"
     ),
-    conditionalPanel(
-      condition = "input.method == 'word'",
-      sliderInput("n", "How many words?",
+    sliderInput("n", "How many words?",
         min = 1, max = 10, value = 4
       ),
+    conditionalPanel(
+      condition = "input.method == 'word'",
       sliderInput("min_size", "Word size",
         min = 2, max = 10, value = c(4, 6),
       ),
@@ -35,18 +35,9 @@ ui <- page_sidebar(
     ),
     conditionalPanel(
       condition = "input.method == 'sentence'",
-      sliderInput("digit_count", "How many words?",
-        min = 1, max = 10, value = 6
-      ),
       textInput("sep", "Separator",
         value = "-",
         placeholder = "e.g. a space, ';' or '-'"
-      )
-    ),
-    conditionalPanel(
-      condition = "input.method == 'phrase'",
-      sliderInput("digit_count", "How many words?",
-        min = 1, max = 10, value = 4
       )
     ),
     actionButton("generate", "Generate password"),

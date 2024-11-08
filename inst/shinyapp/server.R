@@ -7,11 +7,11 @@ server <- function(input, output, session) {
   
   gen_pw <- eventReactive(input$generate, {
     if(input$method == "word"){
-      values$pw <- keep_it_safe(input$method, input$n, input$cap, input$sep, min_size = input$min_size[1], max_size = input$min_size[2])
+      values$pw <- keep_it_safe(input$method, n = input$n, input$cap, input$sep, min_size = input$min_size[1], max_size = input$min_size[2])
     } else if(input$method == "sentence"){
-      values$pw <- keep_it_safe(input$method, input$n)
+      values$pw <- keep_it_safe(input$method, n = input$n)
     } else if(input$method == "phrase"){
-      values$pw <- keep_it_safe(input$method, input$n, input$sep)
+      values$pw <- keep_it_safe(input$method, n = input$n, input$sep)
     }
     
     print(values$pw)
