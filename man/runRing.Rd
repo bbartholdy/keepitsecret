@@ -10,9 +10,8 @@ runRing()
 Launch shiny app
 }
 \examples{
+\dontrun{
 # example code
-
-## Not run
-
 runRing()
+}
 }
