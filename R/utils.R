@@ -12,7 +12,7 @@ pw_methods <- function(){
 get_words <- function(){
   utils::data("lotr", envir = environment())
   text_datf <- data.frame(txt = lotr)
-  words_datf <- tidytext::unnest_tokens(text_datf, word, txt, to_lower = F)
+  words_datf <- dplyr::distinct(tidytext::unnest_tokens(text_datf, word, txt, to_lower = F))
   words_datf$count <- apply(words_datf, MARGIN = 1, nchar)
   return(words_datf)
 }
