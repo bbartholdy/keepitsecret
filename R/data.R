@@ -4,7 +4,7 @@
 #' numbers for the text, and can be used to locate these in the text.
 #' @format A tibble with 62 rows and 7 variables:
 #' \describe{
-#'   \item{chapters}{A string denoting chapter number)}
+#'   \item{chapters}{A string denoting chapter number}
 #'   \item{name_orig}{A string denoting the original name of the chapter as it appears in the text}
 #'   \item{name_clean}{A string with a clean version of the chapter name}
 #'   \item{book}{A string denoting the Book number}
